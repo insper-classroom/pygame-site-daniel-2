@@ -18,28 +18,35 @@
 
 <body>
   <header class="site-header">
-    <div class="header-content">
-      <h1 id="title">Fey Gladiators</h1>
-      <p class="project-subtitle">
-        Um jogo de combate entre dois jogadores no mesmo computador, em melhor de 3 rounds.
-      </p>
+    <div class="page header-inner">
+      <div class="header-brand">
+        <h1 id="title">Fey Gladiators</h1>
+      </div>
 
       <nav class="header-actions" aria-label="Navegação principal">
-        <a href="#devlog">Dev Log</a>
-        <a href="#crap">CRAP</a>
-        <a href="./game.zip" download class="download-btn">Download do jogo</a>
+        <a href="./index.html">Início</a>
+        <a href="./dev-logs.html">Dev Log</a>
+        <a href="./crap.html">CRAP</a>
+        <a href="./game.zip" download class="download-btn">Download</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="page">
     <section class="hero" aria-labelledby="title">
       <div id="membros" class="content-section">
-        <h2>Desenvolvido por grupo Dourado: </h2>
-        <ul class="members-list">
-          <li>Daniel Vinícius</li>
-          <li>Daniel Meirelles</li>
-        </ul>
+        <h2>Sobre</h2>
+        <p>
+          Fey Gladiators é um jogo de batalha local para duas pessoas, jogado no mesmo computador.
+          <br>
+          O objetivo é vencer uma disputa melhor de 3, usando movimentação, disparos e estratégia
+          para derrotar o adversário.
+        </p>
+        <p>
+          O projeto foi pensado para ter uma interface simples, mas ainda ser divertido.
+          <br>
+          Desenvolvido pelo grupo Dourado: Daniel Vinícius e Daniel Meirelles.
+        </p>
       </div>
 
       <div class="hero-media">
@@ -47,26 +54,13 @@
       </div>
     </section>
 
-    <section id="sobre" class="content-section">
-      <h2>Descrição</h2>
-      <p>
-        Fey Gladiators é um jogo de batalha local para duas pessoas, jogado no mesmo computador.
-        O objetivo é vencer uma disputa melhor de 3, usando movimentação, disparos e estratégia
-        para derrotar o adversário.
-      </p>
-      <p>
-        O projeto foi pensado para ter uma interface simples, com telas bem separadas para início,
-        instruções, seleção de personagem, combate e fim de jogo.
-      </p>
-    </section>
-
     <section id="executar" class="content-section">
       <h2>Instruções para executar</h2>
       <ol class="steps-list">
-        <li>Baixe e descompacte o arquivo do jogo.</li>
-        <li>Abra a pasta do projeto no terminal.</li>
-        <li>Instale as dependências, se necessário: <code>pip install pygame</code>.</li>
-        <li>Execute o jogo com: <code>python3 src/jogo.py</code>.</li>
+        <li>1. Baixe e descompacte o arquivo .zip do jogo</li>
+        <li>2. Abra a pasta do projeto no terminal</li>
+        <li>3. Instale as dependências: <code>pip install pygame</code></li>
+        <li>4. Execute o jogo: <code>python3 src/jogo.py</code></li>
       </ol>
     </section>
 
@@ -77,8 +71,8 @@
       </p>
 
       <div class="video-wrapper">
-        <iframe width="360" height="215" src="https://www.youtube.com/embed/d08_zwCvOdg?si=LxXYIk2Rpp-C5uPU"
-          title="YouTube video player" frameborder="0"
+        <iframe src="https://www.youtube.com/embed/d08_zwCvOdg?si=LxXYIk2Rpp-C5uPU" title="YouTube video player"
+          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
