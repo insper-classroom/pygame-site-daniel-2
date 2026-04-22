@@ -5,12 +5,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fey Gladiators</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="reset.css">
+
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <h1>Fey Gladiators</h1>
+  <header class="site-header">
+    <div class="header-content">
+      <h1 id="title">Fey Gladiators</h1>
+      <p class="project-subtitle">
+        Um jogo de combate entre dois jogadores no mesmo computador, em melhor de 3 rounds.
+      </p>
+
+      <nav class="header-actions" aria-label="Navegação principal">
+        <a href="#devlog">Dev Log</a>
+        <a href="#crap">CRAP</a>
+        <a href="./game.zip" download class="download-btn">Download do jogo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div id="membros" class="content-section">
+        <h2>Desenvolvido por grupo Dourado: </h2>
+        <ul class="members-list">
+          <li>Daniel Vinícius</li>
+          <li>Daniel Meirelles</li>
+        </ul>
+      </div>
+
+      <div class="hero-media">
+        <img src="./assets/capa.png" alt="Imagem de capa do jogo Fey Gladiators">
+      </div>
+    </section>
+
+    <section id="sobre" class="content-section">
+      <h2>Descrição</h2>
+      <p>
+        Fey Gladiators é um jogo de batalha local para duas pessoas, jogado no mesmo computador.
+        O objetivo é vencer uma disputa melhor de 3, usando movimentação, disparos e estratégia
+        para derrotar o adversário.
+      </p>
+      <p>
+        O projeto foi pensado para ter uma interface simples, com telas bem separadas para início,
+        instruções, seleção de personagem, combate e fim de jogo.
+      </p>
+    </section>
+
+    <section id="executar" class="content-section">
+      <h2>Instruções para executar</h2>
+      <ol class="steps-list">
+        <li>Baixe e descompacte o arquivo do jogo.</li>
+        <li>Abra a pasta do projeto no terminal.</li>
+        <li>Instale as dependências, se necessário: <code>pip install pygame</code>.</li>
+        <li>Execute o jogo com: <code>python3 src/jogo.py</code>.</li>
+      </ol>
+    </section>
+
+    <section id="video" class="content-section">
+      <h2>Vídeo curto do jogo</h2>
+      <p>
+        O vídeo abaixo mostra o jogo funcionando.
+      </p>
+
+      <div class="video-wrapper">
+        <iframe width="360" height="215" src="https://www.youtube.com/embed/d08_zwCvOdg?si=LxXYIk2Rpp-C5uPU"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Fey Gladiators — Projeto desenvolvido para a disciplina de DevLife no Insper.</p>
+  </footer>
 </body>
 
 </html>
