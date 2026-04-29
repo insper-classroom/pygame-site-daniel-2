@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fey Gladiators</title>
+  <title>Ninja Kombat</title>
 
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./styles.css">
@@ -20,14 +20,14 @@
   <header class="site-header">
     <div class="page header-inner">
       <div class="header-brand">
-        <h1 id="title">Fey Gladiators</h1>
+        <h1 id="title">Ninja Kombat</h1>
       </div>
 
       <nav class="header-actions" aria-label="Navegação principal">
         <a href="./index.html">Início</a>
         <a href="./dev-logs.html">Dev Log</a>
         <a href="./crap.html">CRAP</a>
-        <a href="./game.zip" download class="download-btn">Download</a>
+        <a href="./ninja_kombat.zip" download class="download-btn">Download</a>
       </nav>
     </div>
   </header>
@@ -37,7 +37,7 @@
       <div id="membros" class="content-section">
         <h2>Sobre</h2>
         <p>
-          Fey Gladiators é um jogo de batalha local para duas pessoas, jogado no mesmo computador.
+          Ninja Kombat é um jogo de batalha local para duas pessoas, jogado no mesmo computador.
           <br>
           O objetivo é vencer uma disputa melhor de 3, usando movimentação, disparos e estratégia
           para derrotar o adversário.
@@ -50,17 +50,55 @@
       </div>
 
       <div class="hero-media">
-        <img src="./assets/capa.png" alt="Imagem de capa do jogo Fey Gladiators">
+        <img src="./assets/capa.png" alt="Imagem de capa do jogo Ninja Kombat">
+      </div>
+    </section>
+
+    <section class="content-section screens-section" aria-labelledby="telas-title">
+      <h2 id="telas-title">Telas</h2>
+      <p>
+        Algumas telas do jogo, mostrando o início, as instruções e momentos do combate.
+      </p>
+
+      <div class="screens-grid">
+        <figure class="screen-card">
+          <button class="screen-trigger" type="button" aria-label="Abrir tela inicial em tela cheia">
+            <img src="./assets/inicio.png" alt="Tela inicial do jogo Ninja Kombat">
+          </button>
+          <figcaption>Tela inicial</figcaption>
+        </figure>
+        <figure class="screen-card">
+          <button class="screen-trigger" type="button" aria-label="Abrir tela de instruções em tela cheia">
+            <img src="./assets/instrucoes.png" alt="Tela de instruções do jogo Ninja Kombat">
+          </button>
+          <figcaption>Tela de instruções</figcaption>
+        </figure>
+        <figure class="screen-card">
+          <button class="screen-trigger" type="button" aria-label="Abrir tela de combate em tela cheia">
+            <img src="./assets/combateInicial.png" alt="Tela de combate inicial do jogo Ninja Kombat">
+          </button>
+          <figcaption>Tela de combate</figcaption>
+        </figure>
+        <figure class="screen-card">
+          <button class="screen-trigger" type="button" aria-label="Abrir combate em ação em tela cheia">
+            <img src="./assets/combateAtirando.png" alt="Tela de combate com disparos no jogo Ninja Kombat">
+          </button>
+          <figcaption>Combate em ação</figcaption>
+        </figure>
       </div>
     </section>
 
     <section id="executar" class="content-section">
       <h2>Instruções para executar</h2>
+      <p>Disclaimer: é essencial ter o Python 3.12 instalado na máquina.</p>
+      <br>
+
       <ol class="steps-list">
         <li>1. Baixe e descompacte o arquivo .zip do jogo</li>
-        <li>2. Abra a pasta do projeto no terminal</li>
-        <li>3. Instale as dependências: <code>pip install pygame</code></li>
-        <li>4. Execute o jogo: <code>python3 src/jogo.py</code></li>
+        <li>2. Abra a pasta do projeto no PowerShell</li>
+        <li>3. Rode o script: <code>.\setup.bat</code></li>
+        <li>4. Garanta que esteja usando o .venv: <code>.venv\Scripts\activate</code></li>
+        <li>5. Execute o jogo: <code>python3 src/jogo.py</code></li>
       </ol>
     </section>
 
@@ -71,7 +109,7 @@
       </p>
 
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/d08_zwCvOdg?si=LxXYIk2Rpp-C5uPU" title="YouTube video player"
+        <iframe src="https://www.youtube.com/embed/7WL4SFvqca0?si=vU8ZV8S_6RvKtvf2" title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -79,9 +117,54 @@
     </section>
   </main>
 
+  <div class="lightbox" hidden aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Fechar imagem">×</button>
+    <img class="lightbox-image" src="" alt="">
+  </div>
+
   <footer class="site-footer">
-    <p>Fey Gladiators — Projeto desenvolvido para a disciplina de DevLife no Insper.</p>
+    <p>Ninja Kombat — Projeto desenvolvido para a disciplina de DevLife no Insper.</p>
   </footer>
+
+  <script>
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImage = document.querySelector('.lightbox-image');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const screenTriggers = document.querySelectorAll('.screen-trigger');
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+      document.body.classList.remove('lightbox-open');
+    }
+
+    screenTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const image = trigger.querySelector('img');
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.hidden = false;
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 
 </html>

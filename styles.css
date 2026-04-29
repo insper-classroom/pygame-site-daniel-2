@@ -1,4 +1,4 @@
-/* CSS gerado com auxílio do Chat GPT */
+/* CSS gerado com auxílio do ChatGPT */
 
 :root {
   --bg: #201810;
@@ -155,7 +155,7 @@ main.page {
 }
 
 .hero-media img {
-  /* width: 100%; */
+  width: 80%;
   border-radius: 0.875rem;
   border: 0.0625rem solid var(--border);
 }
@@ -181,6 +181,46 @@ main.page {
   margin-top: 1rem;
 }
 
+.screens-section > p {
+  margin-bottom: 1rem;
+}
+
+.screens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.screen-card {
+  margin: 0;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.875rem;
+}
+
+.screen-trigger {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.screen-card img {
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 0.0625rem solid var(--border);
+}
+
+.screen-card figcaption {
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
 .members-list,
 .steps-list {
   margin: 0;
@@ -202,6 +242,48 @@ main.page {
   aspect-ratio: 16 / 9;
   border: 0;
   border-radius: 0.875rem;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-image {
+  max-width: min(92vw, 80rem);
+  max-height: 88vh;
+  border-radius: 0.875rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.45);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 999rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .site-footer {
