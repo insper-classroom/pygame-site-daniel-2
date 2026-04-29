@@ -27,6 +27,9 @@ html {
 body {
   margin: 0;
   padding-top: var(--header-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "Averia Sans Libre", system-ui, sans-serif;
   background:
     radial-gradient(circle at top, rgba(200, 155, 92, 0.15), transparent 35%),
@@ -126,11 +129,16 @@ a {
 }
 
 main.page {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+main.crap-page {
+  padding-bottom: clamp(4rem, 12vh, 7rem);
 }
 
 .hero,
@@ -179,6 +187,30 @@ main.page {
 
 .content-section p + p {
   margin-top: 1rem;
+}
+
+.file-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.file-list a {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 0.75rem 1rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--panel-2);
+  color: var(--text);
+  overflow-wrap: anywhere;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.file-list a:hover {
+  transform: translateY(-0.1rem);
+  border-color: var(--accent);
 }
 
 .members-list,
