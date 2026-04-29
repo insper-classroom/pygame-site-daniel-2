@@ -227,6 +227,7 @@ main.crap-page {
   color: var(--muted);
   font-size: 0.95rem;
   text-align: center;
+}
 .file-list {
   margin-top: 1rem;
   display: flex;
